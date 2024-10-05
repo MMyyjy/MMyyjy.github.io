@@ -72,6 +72,22 @@ window.onload = function initTriangles(){
 	        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(points), gl.STATIC_DRAW); // 更新顶点缓冲区
 	        renderTriangles(); // 重新渲染
 	    });
+		document.getElementById('number-form').addEventListener('submit', function (event) {
+			        event.preventDefault(); // 阻止表单默认提交行为
+					numTimesToSubdivide = parseInt(document.getElementById('numTimesToSubdivide-input').value, 10);//更改三角形个数
+			        points = []; // 清空points数组
+			        divideTriangle(u, v, w, numTimesToSubdivide); // 重新划分三角形
+			        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(points), gl.STATIC_DRAW); // 更新顶点缓冲区
+			        renderTriangles(); // 重新渲染
+			    });		
+			document.getElementById('twist-form').addEventListener('submit', function (event) {
+			        event.preventDefault(); // 阻止表单默认提交行为
+					twist = parseInt(document.getElementById('twist-input').value, 10);//是否扭曲
+			        points = []; // 清空points数组
+			        divideTriangle(u, v, w, numTimesToSubdivide); // 重新划分三角形
+			        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(points), gl.STATIC_DRAW); // 更新顶点缓冲区
+			        renderTriangles(); // 重新渲染
+			    });	
 };
 
 function tessellaTriangle( a, b, c ){
