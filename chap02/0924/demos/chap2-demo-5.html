@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+	
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <title>Chap2 Demo Tessellation </title>
@@ -25,7 +25,6 @@
 
     <script type="text/javascript" src="../js/ch02/triangle-tessa.js"></script>
 </head>
-
 <body>
     <h2>Triangle Tessellation</h2>
     <canvas id="gl-canvas" width="600" height="600">你的浏览器不支持HTML5 canvas元素</canvas>
@@ -35,7 +34,16 @@
         <input type="number" id="theta-input" value="60">
         <button type="submit">提交</button>
     </form>
-	
+	<form id="number-form">
+	      <label for="numTimesToSubdivide-input">更改三角形个数: </label>
+	      <input type="number" id="numTimesToSubdivide-input" value="4">
+	      <button type="submit">提交</button>
+	  </form>
+	  <form id="twist-form">
+	        <label for="twist-input">是否扭曲: </label>
+	        <input type="number" id="twist-input" value="0">
+	        <button type="submit">提交</button>
+	    </form>
 </body>
 
 </html>
